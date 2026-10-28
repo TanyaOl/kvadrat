@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Квадрат і його властивості</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#faf8f3;--card:#fff;--ink:#1f2933;--mut:#5b6773;--ac:#2563eb;--ac2:#e11d48;--ok:#15803d;--fill:#dbeafe;--line:#d9d4c7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#14181f;--card:#1e242d;--ink:#e8ecf1;--mut:#9aa7b4;--ac:#6ea0ff;--ac2:#ff6b8b;--ok:#4ade80;--fill:#1e3a5f;--line:#33404f}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#14181f;--card:#1e242d;--ink:#e8ecf1;--mut:#9aa7b4;--ac:#6ea0ff;--ac2:#ff6b8b;--ok:#4ade80;--fill:#1e3a5f;--line:#33404f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.w{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.5rem;margin:0}h2{font-size:1.2rem;margin:.2rem 0 .6rem}.sub{color:var(--mut);margin:.2rem 0 0}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 0}
+nav button,.b{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:8px 14px;font:inherit;cursor:pointer;white-space:nowrap}
+nav button.on,.b.on,.b.p{background:var(--ac);color:#fff;border-color:var(--ac)}
+section{display:none}section.on{display:block}
+.c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.def{border-left:5px solid var(--ac2);background:var(--card);padding:12px 14px;border-radius:10px;font-weight:600;margin:12px 0}
+.fig{width:100%;max-width:300px;display:block;margin:6px auto}.lb{font:700 14px system-ui;fill:var(--ink)}.sm{font:600 12px system-ui;fill:var(--ac2)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.st{display:none;padding:6px 10px;margin:6px 0;border-left:4px solid var(--ac);background:var(--bg);border-radius:6px}.st.on{display:block}
+input[type=text]{font:inherit;width:90px;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.fb{margin-top:6px}.ok{color:var(--ok);font-weight:700}.no{color:var(--ac2);font-weight:700}
+.t{padding:10px 0;border-top:1px dashed var(--line)}details{margin-top:4px}
+.tip{background:var(--fill);padding:10px 12px;border-radius:10px}
+body{padding-bottom:190px}
+#tb{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:6px;justify-content:center;align-items:center;flex-wrap:wrap;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 10px rgba(0,0,0,.12)}
+#tb .b{padding:6px 10px;font-size:14px}#tb .sw{width:26px;height:26px;border-radius:50%;border:3px solid var(--card);outline:1px solid var(--line);padding:0;cursor:pointer}#tb .sw.on{outline:3px solid var(--ink)}#tb small{width:100%;text-align:center;color:var(--mut)}
+</style></head><body><div class="w">
+<h1>Квадрат і його властивості</h1><p class="sub">Геометрія, 8 клас · Розділ 1 «Чотирикутники» · § 5</p>
+<nav id="nav"></nav>
+
+<section id="s0"><div class="c"><h2>1. Згадаємо, що вже знаємо</h2>
+<p>Квадрат не з’явився нізвідки: він «живе» всередині інших фігур. Торкайся фігур на малюнку.</p>
+<svg viewBox="0 0 360 220" class="fig" style="max-width:420px" id="venn">
+<ellipse data-k="p" cx="180" cy="110" rx="172" ry="100" fill="var(--fill)" stroke="var(--ink)" stroke-width="2"/>
+<ellipse data-k="r" cx="140" cy="125" rx="85" ry="58" fill="#fde68a" fill-opacity=".7" stroke="var(--ink)" stroke-width="2"/>
+<ellipse data-k="b" cx="220" cy="125" rx="85" ry="58" fill="#fda4af" fill-opacity=".6" stroke="var(--ink)" stroke-width="2"/>
+<ellipse data-k="s" cx="180" cy="125" rx="35" ry="50" fill="#86efac" stroke="var(--ink)" stroke-width="2"/>
+<g class="lb" text-anchor="middle" style="pointer-events:none"><text x="180" y="38">Паралелограм</text><text x="108" y="128" style="font-size:12px;fill:#000">Прямокутник</text><text x="252" y="128" style="font-size:12px;fill:#000">Ромб</text><text x="180" y="128" style="font-size:11px;fill:#000">Квадрат</text></g></svg>
+<div class="tip" id="vinfo">Обери фігуру 👆</div></div>
+<div class="c"><h2>Ланцюжок означень</h2><p>Паралелограм → <b>прямокутник</b> (усі кути прямі) → <b>квадрат</b> (ще й усі сторони рівні).<br>Паралелограм → <b>ромб</b> (усі сторони рівні) → <b>квадрат</b> (ще й усі кути прямі).</p></div></section>
+
+<section id="s1"><div class="c"><h2>2. Що таке квадрат</h2>
+<div class="def">Квадратом називають прямокутник, у якого всі сторони рівні.</div>
+<p><b>Спробуй сам:</b> тягни повзунок і зроби ширину рівною висоті.</p>
+<svg viewBox="0 0 260 160" class="fig" style="max-width:340px"><rect id="rr" x="20" y="30" width="60" height="100" fill="var(--fill)" stroke="var(--ink)" stroke-width="2.5"/><text id="rt" x="130" y="150" class="lb" text-anchor="middle"></text></svg>
+<input type="range" id="rg" min="40" max="220" value="60" style="width:100%" aria-label="ширина">
+<div class="tip" id="rm"></div>
+<p>Квадрат — це одночасно і <b>прямокутник</b>, і <b>ромб</b> (бо прямокутник — паралелограм, а в нього всі сторони рівні). Тому він має властивості <b>всіх трьох</b> фігур: паралелограма, прямокутника і ромба.</p>
+<div class="def">Площа квадрата S = a · a = a², периметр P = 4a.</div></div></section>
+
+<section id="s2"><div class="c"><h2>3. Властивості квадрата</h2><p>Натискай по черзі 1 → 5. Кожна властивість з’являється на малюнку.</p>
+<div class="row" id="pb"></div><div id="pf"></div>
+<div class="tip" id="pt"></div></div></section>
+
+<section id="s3"><div class="c"><h2>4. Ознаки квадрата</h2><p>Як зрозуміти, що фігура — квадрат? Підійде будь-яка з умов:</p>
+<ol><li><b>Прямокутник</b> із двома рівними сусідніми сторонами (тоді всі сторони рівні).</li>
+<li><b>Прямокутник</b>, діагоналі якого перпендикулярні.</li>
+<li><b>Ромб</b> з одним прямим кутом (тоді всі кути прямі).</li>
+<li><b>Ромб</b> з рівними діагоналями.</li></ol>
+<div class="tip">Секрет: квадрат = властивості прямокутника + властивості ромба. Якщо в паралелограма є «прямокутні» і «ромбові» ознаки одночасно — це квадрат.</div></div>
+<div class="c"><h2>Як розв’язувати задачу (4 кроки)</h2><ol><li>Прочитай і <b>намалюй</b> фігуру.</li><li>Познач на малюнку те, що дано.</li><li>Згадай <b>властивість</b>: які сторони, кути, діагоналі?</li><li>Порахуй і <b>перевір</b> відповідь на здоровий глузд.</li></ol></div></section>
+
+<section id="s4"><h2 style="margin-top:14px">5. Розбираємо задачі крок за кроком</h2><div id="ex"></div></section>
+
+<section id="s5"><div class="c"><h2>6. Самостійна робота: паралелограм, прямокутник, ромб, квадрат</h2><p>12 задач. Впиши числову відповідь (можна з комою) і натисни «Перевірити». Якщо не виходить — відкрий розв’язання.</p></div><div id="st"></div>
+<div class="c"><button class="b p" id="fin">Підсумок</button><div class="fb" id="res"></div></div></section>
+</div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const TABS=['Згадаємо','Квадрат','Властивості','Ознаки','Задачі','Самостійна'];
+$('#nav').innerHTML=TABS.map((t,i)=>`<button data-i="${i}">${i+1}. ${t}</button>`).join('');
+let cur=0;function go(i){bd.sw(cur,i);cur=i;$$('section').forEach((s,j)=>s.classList.toggle('on',i==j));$$('nav button').forEach((b,j)=>b.classList.toggle('on',i==j));try{location.hash='t'+i}catch(e){}scrollTo(0,0)}
+$('#nav').onclick=e=>{if(e.target.dataset.i)go(+e.target.dataset.i)};
+function sq(o={}){let s='<svg viewBox="0 0 220 200" class="fig" role="img"><rect x="50" y="40" width="120" height="120" fill="var(--fill)" stroke="var(--ink)" stroke-width="2.5"/>';
+if(o.eq)s+='<g class="g-eq" stroke="var(--ac2)" stroke-width="2.5"><path d="M44 100h12M164 100h12M110 34v12M110 154v12"/></g>';
+if(o.rt)s+='<g class="g-rt" fill="none" stroke="var(--ink)" stroke-width="1.5"><path d="M50 146h14v14M50 54h14v-14M170 54h-14v-14M170 146h-14v14"/></g>';
+if(o.dg)s+='<g class="g-dg"><path d="M50 160L170 40M50 40L170 160" stroke="var(--ac)" stroke-width="2.5"/><circle cx="110" cy="100" r="3.5" fill="var(--ink)"/><text x="96" y="116" class="lb">O</text></g>';
+if(o.pp)s+='<path class="g-pp" d="M110 100l8-8 8 8-8 8z" fill="none" stroke="var(--ink)" stroke-width="1.5"/>';
+if(o.a45)s+='<g class="g-a45 sm"><text x="88" y="150">45°</text><text x="54" y="88">45°</text><text x="130" y="54">45°</text><text x="136" y="122">45°</text></g>';
+s+='<g class="lb"><text x="34" y="172">A</text><text x="34" y="36">B</text><text x="176" y="36">C</text><text x="176" y="172">D</text></g>';
+(o.t||[]).forEach(a=>s+=`<text x="${a[0]}" y="${a[1]}" class="sm" style="font-size:14px">${a[2]}</text>`);return s+'</svg>'}
+/* Венн */
+const K={p:'<b>Паралелограм:</b> протилежні сторони й кути рівні; діагоналі діляться навпіл; сусідні кути в сумі 180°.',r:'<b>Прямокутник</b> — паралелограм із прямими кутами. Діагоналі рівні.',b:'<b>Ромб</b> — паралелограм з рівними сторонами. Діагоналі перпендикулярні й ділять кути навпіл.',s:'<b>Квадрат</b> — і прямокутник, і ромб одночасно. Має УСІ ці властивості!'};
+$('#venn').onclick=e=>{const k=e.target.dataset.k;if(k)$('#vinfo').innerHTML=K[k]};
+/* повзунок */
+$('#rg').oninput=()=>{const w=+$('#rg').value;$('#rr').setAttribute('width',w);const q=Math.abs(w-100)<5;if(q)$('#rr').setAttribute('width',100);$('#rr').setAttribute('fill',q?'#86efac':'var(--fill)');$('#rt').textContent=q?'a = a':'';$('#rm').innerHTML=q?'✅ Усі сторони рівні й кути прямі — це <b>квадрат</b>!':'Це прямокутник: сторони '+w+' і 100 різні. Зроби їх рівними.'};$('#rg').oninput();
+/* властивості */
+const P=[['Усі сторони рівні','AB = BC = CD = DA, тому P = 4a. (Як у ромба.)',['eq']],['Усі кути прямі','∠A = ∠B = ∠C = ∠D = 90°. (Як у прямокутника.)',['eq','rt']],['Діагоналі рівні','AC = BD, бо △ACD = △DBA за двома катетами. (Як у прямокутника.)',['eq','rt','dg']],['Діагоналі ⊥ і діляться навпіл','AC ⊥ BD і AO = BO = CO = DO. Точка O однаково віддалена від усіх вершин.',['eq','rt','dg','pp']],['Діагоналі ділять кути навпіл','Прямий кут ділиться навпіл: 90° : 2 = 45°. (Як у ромба.)',['eq','rt','dg','pp','a45']]];
+$('#pf').innerHTML=sq({eq:1,rt:1,dg:1,pp:1,a45:1});
+$('#pb').innerHTML=P.map((p,i)=>`<button class="b" data-i="${i}">${i+1}. ${p[0]}</button>`).join('');
+function prop(i){$$('#pb .b').forEach((b,j)=>b.classList.toggle('on',i==j));['eq','rt','dg','pp','a45'].forEach(n=>$$('#pf .g-'+n).forEach(g=>g.style.display=P[i][2].includes(n)?'':'none'));$('#pt').innerHTML='<b>'+P[i][0]+'.</b> '+P[i][1]}
+$('#pb').onclick=e=>{if(e.target.dataset.i)prop(+e.target.dataset.i)};prop(0);
+/* перевірка відповіді */
+function tk(id,q,a,sol){return `<div class="t" data-a="${a}" id="${id}"><div>${q}</div><div class="row"><input type="text" inputmode="decimal" aria-label="відповідь"><button class="b" data-chk>Перевірити</button></div><div class="fb"></div><details><summary>Розв’язання</summary>${sol}</details></div>`}
+document.addEventListener('click',e=>{if(e.target.dataset.chk!==undefined)chk(e.target.closest('.t'))});
+function chk(t){const v=parseFloat(t.querySelector('input').value.replace(',','.')),ok=Math.abs(v-t.dataset.a)<1e-6;t.querySelector('.fb').innerHTML=ok?'<span class="ok">✔ Вірно!</span>':'<span class="no">✘ Ще раз подумай. Відкрий розв’язання, якщо треба.</span>';t.dataset.ok=ok?1:0;return ok}
+/* розбір */
+const EX=[
+{q:'Периметр квадрата дорівнює 24 см. Знайдіть його сторону.',f:{eq:1,t:[[88,26,'a = ?']]},st:['У квадрата всі сторони рівні, тому <b>P = 4 · a</b>.','Щоб знайти a, ділимо периметр на 4: a = P : 4.','a = 24 : 4 = 6.','<b>Відповідь: 6 см.</b>'],y:['Спробуй сам: P = 40 см. Чому дорівнює сторона (см)?',10,'40 : 4 = 10']},
+{q:'Який кут утворює діагональ квадрата зі стороною?',f:{diag:1,dg:1,t:[[88,150,'?']]},st:['Кут A квадрата прямий: ∠A = 90°.','Діагональ ділить кут квадрата (як і ромба) навпіл.','∠CAD = 90° : 2 = 45°.','<b>Відповідь: 45°.</b>'],y:['Спробуй сам: який кут між діагоналями квадрата (°)?',90,'Діагоналі квадрата перпендикулярні.']},
+{q:'Діагоналі квадрата ABCD перетинаються в точці O, AC = 14 см. Знайдіть OB і ∠AOB.',f:{dg:1,t:[[62,126,'14 см']]},st:['Діагоналі квадрата рівні: BD = AC = 14 см.','Діагоналі діляться точкою O навпіл: OB = 14 : 2 = 7 см.','Діагоналі перпендикулярні, тому ∠AOB = 90°.','<b>Відповідь: OB = 7 см, ∠AOB = 90°.</b>'],y:['Спробуй сам: BD = 20 см. Знайдіть AO (см).',10,'AO = 20 : 2 = 10']},
+{q:'Сторона квадрата 2,1 дм. Знайдіть його периметр і площу.',f:{eq:1,t:[[80,26,'2,1 дм']]},st:['P = 4a = 4 · 2,1 = 8,4 дм.','Площа квадрата S = a · a = a² (як у прямокутника: довжина · ширина).','S = 2,1 · 2,1 = 4,41 дм².','<b>Відповідь: P = 8,4 дм, S = 4,41 дм².</b>'],y:['Спробуй сам: a = 5 см. Знайдіть S (см²).',25,'S = 5 · 5 = 25']},
+{q:'Діагоналі чотирикутника рівні, перпендикулярні й діляться навпіл. Доведіть, що це квадрат.',f:{dg:1,pp:1},st:['Діагоналі діляться навпіл → за ознакою це <b>паралелограм</b>.','Діагоналі рівні → паралелограм є <b>прямокутником</b>.','Діагоналі перпендикулярні → паралелограм є <b>ромбом</b>.','Прямокутник і ромб одночасно = прямокутник з рівними сторонами = <b>квадрат</b> ✔.']}];
+$('#ex').innerHTML=EX.map((x,i)=>`<div class="c" id="e${i}"><b>Задача ${i+1}.</b> ${x.q}${sq(x.f)}<div>${x.st.map(s=>`<div class="st">${'Крок '+(x.st.indexOf(s)+1)+': '+s}</div>`).join('')}</div><button class="b p" data-n="${i}">Показати крок</button>${x.y?tk('y'+i,'<br><b>'+x.y[0]+'</b>',x.y[1],x.y[2]):''}</div>`).join('');
+$('#ex').onclick=e=>{const n=e.target.dataset.n;if(n===undefined)return;const s=$$('#e'+n+' .st:not(.on)');if(s.length)s[0].classList.add('on');if(s.length<=1)e.target.style.display='none'};
+/* самостійна */
+const T=[['Паралелограм',[['Один кут паралелограма дорівнює 50°. Знайдіть його тупий кут (°).',130,'Сусідні кути в сумі 180°: 180° − 50° = 130°.'],['Сторони паралелограма 12 см і 15 см. Знайдіть периметр (см).',54,'P = 2 · (12 + 15) = 54.'],['Два сусідні кути паралелограма відносяться як 2 : 3. Знайдіть менший кут (°).',72,'2x + 3x = 180°, x = 36°, менший кут 2 · 36° = 72°.']]],
+['Прямокутник',[['У прямокутнику ABCD діагональ AC = 9 см. Знайдіть BD (см).',9,'Діагоналі прямокутника рівні.'],['Сторони прямокутника 5 см і 8 см. Знайдіть периметр (см).',26,'P = 2 · (5 + 8) = 26.'],['Діагональ прямокутника утворює з однією стороною кут 35°. Який кут вона утворює з другою стороною (°)?',55,'Кут прямокутника 90°: 90° − 35° = 55°.']]],
+['Ромб',[['Периметр ромба 24 см. Знайдіть його сторону (см).',6,'Усі сторони рівні: 24 : 4 = 6.'],['Гострий кут ромба 40°. Який кут утворює діагональ з виходящою з цього кута стороною (°)?',20,'Діагональ ділить кут навпіл: 40° : 2 = 20°.'],['У ромбі ABCD ∠A = 36°, O — точка перетину діагоналей. Знайдіть ∠ABO (°).',72,'У △AOB: ∠AOB = 90°, ∠OAB = 36° : 2 = 18°, тому ∠ABO = 90° − 18° = 72°.']]],
+['Квадрат',[['Сторона квадрата 7 см. Знайдіть периметр (см).',28,'P = 4 · 7 = 28.'],['Периметр квадрата 36 см. Знайдіть площу (см²).',81,'a = 36 : 4 = 9; S = 9² = 81.'],['Діагоналі квадрата перетинаються в O, AC = 14 см. Знайдіть OD (см).',7,'BD = AC = 14, діагоналі діляться навпіл: OD = 14 : 2 = 7.']]]];
+let n=0;$('#st').innerHTML=T.map(g=>`<div class="c"><h2>${g[0]}</h2>${g[1].map(t=>tk('q'+n,'<b>'+(++n)+'.</b> '+t[0],t[1],t[2])).join('')}</div>`).join('');
+$('#fin').onclick=()=>{let k=0;$$('#st .t').forEach(t=>{if(chk(t))k++});$('#res').innerHTML=`<p><b>Результат: ${k} із 12.</b> `+(k>=11?'Відмінно! Ти добре знаєш усі паралелограми 🌟':k>=8?'Добре! Подивись розв’язання невірних задач і виправ їх.':'Ще потрібне повторення: поверни до вкладок «Властивості» та «Задачі», а потім спробуй знову.')+'</p>'};
+/* дошка для малювання поверх усього уроку */
+const bd=(()=>{const cv=document.createElement('canvas'),x=cv.getContext('2d'),dpr=window.devicePixelRatio||1,D={};let m='off',col='#e11d48',W=0,H=0,dn=false,sx=0,sy=0,snap;
+cv.style.cssText='position:absolute;left:0;top:0;z-index:50;pointer-events:none;touch-action:none';document.body.appendChild(cv);
+function fit(){const w=document.documentElement.clientWidth,h=Math.max(document.body.offsetHeight+80,innerHeight);if(w==W&&h==H)return;const t=document.createElement('canvas');t.width=cv.width;t.height=cv.height;t.getContext('2d').drawImage(cv,0,0);W=w;H=h;cv.width=w*dpr;cv.height=h*dpr;cv.style.width=w+'px';cv.style.height=h+'px';x.setTransform(dpr,0,0,dpr,0,0);x.drawImage(t,0,0,t.width/dpr,t.height/dpr)}
+function clr(){x.save();x.setTransform(1,0,0,1,0,0);x.globalCompositeOperation='source-over';x.clearRect(0,0,cv.width,cv.height);x.restore()}
+let ss='rect';function shp(px,py){let x0=sx,y0=sy,x1=px,y1=py;if(ss=='sq'){const d=Math.max(Math.abs(x1-x0),Math.abs(y1-y0));x1=x0+(x1<x0?-d:d);y1=y0+(y1<y0?-d:d)}const w=x1-x0,h=y1-y0,o=w*.25;if(ss=='circ')x.ellipse(x0+w/2,y0+h/2,Math.abs(w/2),Math.abs(h/2),0,0,6.2832);else if(ss=='rh'){x.moveTo(x0+w/2,y0);x.lineTo(x1,y0+h/2);x.lineTo(x0+w/2,y1);x.lineTo(x0,y0+h/2);x.closePath()}else if(ss=='par'){x.moveTo(x0+o,y0);x.lineTo(x1,y0);x.lineTo(x1-o,y1);x.lineTo(x0,y1);x.closePath()}else if(ss=='tri'){x.moveTo(x0+w/2,y0);x.lineTo(x1,y1);x.lineTo(x0,y1);x.closePath()}else x.rect(x0,y0,w,h)}
+cv.addEventListener('pointerdown',e=>{if(m=='off')return;fit();dn=true;cv.setPointerCapture(e.pointerId);sx=e.pageX;sy=e.pageY;x.lineCap=x.lineJoin='round';x.lineWidth=m=='er'?26:3;x.strokeStyle=col;x.globalCompositeOperation=m=='er'?'destination-out':'source-over';if(m=='line'||m=='sh'){snap=document.createElement('canvas');snap.width=cv.width;snap.height=cv.height;snap.getContext('2d').drawImage(cv,0,0)}else{x.beginPath();x.moveTo(sx,sy);x.lineTo(sx+.1,sy);x.stroke();x.beginPath();x.moveTo(sx,sy)}e.preventDefault()});
+cv.addEventListener('pointermove',e=>{if(!dn)return;const px=e.pageX,py=e.pageY;if(m=='line'||m=='sh'){clr();x.save();x.setTransform(1,0,0,1,0,0);x.drawImage(snap,0,0);x.restore();x.beginPath();if(m=='sh')shp(px,py);else{x.moveTo(sx,sy);x.lineTo(px,py)}x.stroke()}else{x.lineTo(px,py);x.stroke();x.beginPath();x.moveTo(px,py)}});
+['pointerup','pointercancel'].forEach(n=>cv.addEventListener(n,()=>{dn=false}));
+const tb=document.createElement('div');tb.id='tb';tb.innerHTML='<button class="b on" data-m="off" title="Гортати сторінку">🖐 Гортати</button><button class="b" data-m="pen">✏️ Олівець</button><button class="b" data-m="line">📏 Лінія</button><button class="b" data-m="sh">🔷 Фігури</button><button class="b" data-m="er">🧽 Гумка</button><button class="b" data-m="clr">🗑 Очистити</button><button class="sw on" data-c="#e11d48" style="background:#e11d48" aria-label="червоний"></button><button class="sw" data-c="#2563eb" style="background:#2563eb" aria-label="синій"></button><button class="sw" data-c="#16a34a" style="background:#16a34a" aria-label="зелений"></button><div id="shs" style="display:none;width:100%;justify-content:center;gap:6px;flex-wrap:wrap"><button class="b on" data-s="rect">▭ Прямокутник</button><button class="b" data-s="sq">◻ Квадрат</button><button class="b" data-s="rh">◇ Ромб</button><button class="b" data-s="par">▱ Паралелограм</button><button class="b" data-s="tri">△ Трикутник</button><button class="b" data-s="circ">◯ Коло</button></div><small id="tbh">Малюй поверх уроку. Щоб гортати — натисни «Гортати».</small>';document.body.appendChild(tb);
+tb.onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.c){col=b.dataset.c;if(m=='er')m='pen';tb.querySelectorAll('.sw').forEach(s=>s.classList.toggle('on',s==b));sync();return}if(b.dataset.s){ss=b.dataset.s;tb.querySelectorAll('[data-s]').forEach(s=>s.classList.toggle('on',s==b));return}const k=b.dataset.m;if(k=='clr'){clr();return}m=k;sync()};
+function sync(){tb.querySelectorAll('[data-m]').forEach(b=>b.classList.toggle('on',b.dataset.m==m));cv.style.pointerEvents=m=='off'?'none':'auto';$('#shs').style.display=m=='sh'?'flex':'none';$('#tbh').textContent=m=='off'?'Малюй поверх уроку. Щоб гортати — натисни «Гортати».':'Режим малювання: сторінка не гортається. Натисни «Гортати», щоб прокрутити.';fit()}
+new ResizeObserver(fit).observe(document.body);addEventListener('resize',fit);fit();
+return{sw(a,b){D[a]=cv.toDataURL();clr();setTimeout(()=>{fit();if(D[b]){const im=new Image();im.onload=()=>{x.save();x.setTransform(1,0,0,1,0,0);x.drawImage(im,0,0);x.restore()};im.src=D[b]}},0)}}})();
+go(+((location.hash.match(/t(\d)/)||[])[1]||0));
+</script></body></html>
